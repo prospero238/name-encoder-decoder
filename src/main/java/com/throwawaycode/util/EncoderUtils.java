@@ -2,8 +2,7 @@ package com.throwawaycode.util;
 
 public class EncoderUtils {
 
-    public static final char PAD_CHARACTER = '#';
-    public static final String PAD = PAD_CHARACTER + "";
+    public static final String PAD = "#";
 
 
     private EncoderUtils() {

@@ -27,7 +27,7 @@ public class SplitAndMixEncoder implements NameEncoder {
     }
 
     private static void appendSingleCharacter(StringBuilder plaintext) {
-        plaintext.append(EncoderUtils.PAD_CHARACTER);
+        plaintext.append(EncoderUtils.PAD);
     }
 
 }
