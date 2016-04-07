@@ -42,14 +42,16 @@ public class NameEncoderDecoderApplication {
             if (command.equals(ENCODE)) {
                 encodeInput(input, nameEncoder);
             }
-
-            CacheManager.getInstance().shutdown();
-
-
+            shutdown();
         };
 	}
 
-	private static void encodeInput(String[] input, NameEncoder nameEncoder) {
+    private static void shutdown() {
+        // process doesn't seem to properly terminate unless shutdown on cachemanager is called explicitly
+        CacheManager.getInstance().shutdown();
+    }
+
+    private static void encodeInput(String[] input, NameEncoder nameEncoder) {
 		StringBuilder output = new StringBuilder();
         for (String plaintext : input) {
             String cipherText = nameEncoder.encode(plaintext);
