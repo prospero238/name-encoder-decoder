@@ -25,7 +25,7 @@ Decryption method:
 My Effort Intro
 ---------------------------------------------------
 
-The decode/encode routines reside in two different classes, SplitAndMixReassemblerDecoder and SplitAndMixEncoder respectively (links: [SplitAndMixReassemblerDecoder](https://github.com/prospero238/name-encoder-decoder/blob/master/src/main/java/com/throwawaycode/service/SplitAndMixReassemblerDecoder.java),[SplitAndMixEncoder](https://github.com/prospero238/name-encoder-decoder/blob/master/src/main/java/com/throwawaycode/service/SplitAndMixEncoder.java) 
+The decode/encode routines reside in two different classes, SplitAndMixReassemblerDecoder and SplitAndMixEncoder respectively (links: [SplitAndMixReassemblerDecoder](https://github.com/prospero238/name-encoder-decoder/blob/master/src/main/java/com/throwawaycode/service/SplitAndMixReassemblerDecoder.java),[SplitAndMixEncoder](https://github.com/prospero238/name-encoder-decoder/blob/master/src/main/java/com/throwawaycode/service/SplitAndMixEncoder.java)) 
 
 Unit tests exist for each class.  You'll also find a test that verifies cache usage.
 
