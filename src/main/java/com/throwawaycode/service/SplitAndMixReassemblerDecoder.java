@@ -8,12 +8,12 @@ import com.throwawaycode.util.EncoderUtils;
 
 public class SplitAndMixReassemblerDecoder implements NameDecoder {
 
-    public static final String CACHE_NAME = "encoded_name_cache";
+    public static final String DECODER_CACHE_NAME = "decoded_names";
 
     private static final Logger LOG = LoggerFactory.getLogger(SplitAndMixReassemblerDecoder.class);
 
     @Override
-    @Cacheable(cacheNames = CACHE_NAME)
+    @Cacheable(cacheNames = DECODER_CACHE_NAME)
     public String decode(String ciphertext) {
 
         StringHalves halves = StringHalves.splitIntoHalves(ciphertext);

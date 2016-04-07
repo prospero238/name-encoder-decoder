@@ -15,6 +15,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.throwawaycode.service.NameDecoder;
+import com.throwawaycode.service.NameEncoder;
+import com.throwawaycode.service.SplitAndMixEncoder;
 import com.throwawaycode.service.SplitAndMixReassemblerDecoder;
 
 import static org.hamcrest.core.Is.is;
@@ -27,7 +29,12 @@ public class CacheUsageVerificationTest {
 
     @Resource
     protected NameDecoder decoder;
-    protected String ciphertext = RandomStringUtils.randomAlphabetic(4);
+
+    @Resource
+    protected NameEncoder nameEncoder;
+
+    protected String randomCharacters = RandomStringUtils.randomAlphabetic(4);
+
     protected CacheManager cacheManager;
 
     @Before
@@ -37,17 +44,37 @@ public class CacheUsageVerificationTest {
 
     @Test
     public void should_utilize_cache_when_identical_ciphertext_is_decoded() {
-        decodeIdenticalCiphertextTwice(ciphertext);
-        assertThat(nameCacheHitCount(), isExactlyOne());
+        decodeIdenticalCiphertextTwice(randomCharacters);
+        assertThat(decoderCacheHitCount(), isExactlyOne());
     }
 
-    private long nameCacheHitCount() {
-        return cacheManager.getCache(SplitAndMixReassemblerDecoder.CACHE_NAME).getStatistics().cacheHitCount();
+    @Test
+    public void should_use_cache_when_encoding_identical_names() {
+        encodeIdenticalPlaintextTwice(randomCharacters);
+        assertThat(encoderCacheHitCount(), isExactlyOne());
     }
 
     private void decodeIdenticalCiphertextTwice(String ciphertext) {
         decoder.decode(ciphertext);
         decoder.decode(ciphertext);
+    }
+
+    private void encodeIdenticalPlaintextTwice(CharSequence plaintext) {
+        nameEncoder.encode(plaintext.toString());
+        nameEncoder.encode(plaintext.toString());
+    }
+
+    private long encoderCacheHitCount() {
+        return cacheHitCount(SplitAndMixEncoder.ENCODED_NAMES_CACHE);
+    }
+
+    private long decoderCacheHitCount() {
+        String cacheName = SplitAndMixReassemblerDecoder.DECODER_CACHE_NAME;
+        return cacheHitCount(cacheName);
+    }
+
+    private long cacheHitCount(String cacheName) {
+        return cacheManager.getCache(cacheName).getStatistics().cacheHitCount();
     }
 
     private static Matcher<Long> isExactlyOne() {

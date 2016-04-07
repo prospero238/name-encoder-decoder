@@ -3,11 +3,20 @@
 
     <cache
             statistics="true"
-            name="encoded_name_cache"
+            name="decoded_names"
+            maxElementsInMemory="120"
+            eternal="true"
+            overflowToDisk="false"
+            diskPersistent="true"
+            memoryStoreEvictionPolicy="LFU"/>
+    <cache
+            statistics="true"
+            name="encoded_names"
             maxElementsInMemory="120"
             eternal="true"
             overflowToDisk="false"
             diskPersistent="true"
             memoryStoreEvictionPolicy="LFU"/>
 
-    </ehcache>
+
+</ehcache>
