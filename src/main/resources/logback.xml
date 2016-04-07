@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <property name="MY_LOG_PATTERN"
+              value="%m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"/>
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <appender name="stdout"
+              class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${MY_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+
+    </appender>
+
+    <root level="WARN">
+        <appender-ref ref="FILE"/>
+    </root>
+
+    <logger additivity="false" name="com.throwawaycode.NameEncoderDecoderApplication" level="INFO">
+        <appender-ref ref="stdout"/>
+    </logger>
+
+</configuration>
