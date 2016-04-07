@@ -46,7 +46,6 @@ public class SplitAndMixEncoderTest {
             String plaintext = StringUtils.repeat("a", i);
             String cipherText = encoder.encode(plaintext);
             assertThatNameWasEncoded(plaintext, cipherText);
-
         }
     }
 

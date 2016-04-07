@@ -29,6 +29,12 @@ public class SplitAndMixReassemblerDecoderTest {
         assertThat(result, is(expectedResult));
     }
 
+    @Test
+    public void should_preserve_name_ending_with_pound_symbol() {
+        String cipherText = "a##Vim";
+        String expectedResult = "Vima#";
+        assertThat(reassembler.decode(cipherText), is(expectedResult));
 
+    }
 
 }
