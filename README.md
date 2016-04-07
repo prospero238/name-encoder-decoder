@@ -1,7 +1,7 @@
 Introduction
 ==============================
 
-The decode/encode routines reside in two different classes, SplitAndMixReassemblerDecoder and SplitAndMixEncoder respectively (links: SplitAndMixReassemblerDecoder 
+The decode/encode routines reside in two different classes, SplitAndMixReassemblerDecoder and SplitAndMixEncoder respectively (links: [SplitAndMixReassemblerDecoder](https://github.com/prospero238/name-encoder-decoder/blob/master/src/main/java/com/throwawaycode/service/SplitAndMixReassemblerDecoder.java) , [SplitAndMixEncoder]( 
 
 Unit tests exist for each class.  You'll also find a test that verifies cache usage.
 

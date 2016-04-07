@@ -1,5 +1,9 @@
 package com.throwawaycode.service;
 
+/**
+ * Provides two halves of a string.  If the string contains an odd number of characters, the split is made to favor the second half.
+ * For example, when given "Brian", the first half will be "Br" and the second half "ian".
+ */
 public class StringHalves {
     String firstHalf;
     String secondHalf;

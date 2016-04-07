@@ -3,6 +3,8 @@ package com.throwawaycode.service;
 import org.apache.commons.lang3.StringUtils;
 import org.hamcrest.Matcher;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.throwawaycode.util.EncoderUtils;
 
@@ -13,6 +15,7 @@ import static org.junit.Assert.assertThat;
 public class SplitAndMixEncoderTest {
     private static final int STOP_VERIFYING_AT_LENGTH = 200;
     SplitAndMixEncoder encoder = new SplitAndMixEncoder();
+    private static final Logger LOG = LoggerFactory.getLogger(SplitAndMixEncoderTest.class);
 
     @Test
     public void should_encode_name_with_even_length_as_expected() {
@@ -23,6 +26,13 @@ public class SplitAndMixEncoderTest {
         assertThat(encodingResult, is(expectedCipherText));
     }
 
+    @Test
+    public void should_return_blank_if_provided_blank_string() {
+        String blankString = "";
+        String encoded = encoder.encode(blankString);
+
+        assertThat(encoded, is(blankString));
+    }
     @Test
     public void should_encode_name_with_odd_length_as_expected() {
         String nameWhoseLengthIsOdd = "Vimal";
