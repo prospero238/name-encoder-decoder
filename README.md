@@ -1,5 +1,5 @@
 Assignment
-=============================
+---------------------------------------------------
 
 Your utility class should contain a cache of previously encrypted names so that if you encrypt or decrypt a name, the cache is checked first to see if the name is there. You can implement the cache any way you would like.
 
@@ -23,7 +23,7 @@ Decryption method:
     Otherwise decrypt the name by reversing the encryption algorithm, add to the cache, and return the non-encrypted name
 
 My Effort Intro
-==============================
+---------------------------------------------------
 
 The decode/encode routines reside in two different classes, SplitAndMixReassemblerDecoder and SplitAndMixEncoder respectively (links: [SplitAndMixReassemblerDecoder](https://github.com/prospero238/name-encoder-decoder/blob/master/src/main/java/com/throwawaycode/service/SplitAndMixReassemblerDecoder.java) , [SplitAndMixEncoder]( 
 
@@ -49,4 +49,4 @@ Caching
 ==============================
 
 I took a liberal interpretation of "implement the cache any way you would like" and used ehcache here.  I am certainly 
-willing to dispense with libraries if you'd prefer (though contrary to how I'd normally develop!).
+willing to dispense with libraries if you'd prefer (though this would be contrary to how I'd normally develop!).
