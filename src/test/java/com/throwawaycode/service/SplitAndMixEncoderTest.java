@@ -62,7 +62,7 @@ public class SplitAndMixEncoderTest {
         return is(2L);
     }
 
-    private static long numberOfUniqueCharacters(String cipherText) {
+    private static long numberOfUniqueCharacters(CharSequence cipherText) {
         return cipherText.chars().distinct().count();
     }
 
