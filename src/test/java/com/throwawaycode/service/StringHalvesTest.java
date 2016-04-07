@@ -14,7 +14,7 @@ public class StringHalvesTest {
         StringHalves stringHalves = halveStringOfLength(stringLength);
 
         assertThat(stringHalves.getFirstHalf().length(), is(stringLength / 2));
-        assertThat(stringHalves.getSecondHalf(), is(stringLength / 2));
+        assertThat(stringHalves.getSecondHalf().length(), is(stringLength / 2));
     }
 
     @Test
