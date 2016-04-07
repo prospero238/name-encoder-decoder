@@ -5,8 +5,8 @@ package com.throwawaycode.service;
  * For example, when given "Brian", the first half will be "Br" and the second half "ian".
  */
 public class StringHalves {
-    String firstHalf;
-    String secondHalf;
+    private String firstHalf;
+    private String secondHalf;
 
     public static StringHalves splitIntoHalves(CharSequence plaintext) {
         String name = plaintext.toString();

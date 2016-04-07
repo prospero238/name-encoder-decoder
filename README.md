@@ -39,7 +39,7 @@ For example:
 java -jar target/name-encoder-decoder-0.0.1-SNAPSHOT.jar decode inAm al#Vim
 
 # encode
-java -jar target/name-encoder-decoder-0.0.1-SNAPSHOT.jar decode Amin Vimal
+java -jar target/name-encoder-decoder-0.0.1-SNAPSHOT.jar encode Amin Vimal
 </pre>
 
 Decode/encode results are provided on stdout, as well as cache statistics. 
