@@ -46,7 +46,7 @@ Decode/encode results are provided on stdout, as well as cache statistics.
 
 
 Caching
-==============================
+----------------------------------
 
 I took a liberal interpretation of "implement the cache any way you would like" and used ehcache here.  I am certainly 
 willing to dispense with libraries if you'd prefer (though this would be contrary to how I'd normally develop!).
