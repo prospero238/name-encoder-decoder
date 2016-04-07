@@ -16,8 +16,8 @@ public class SplitAndMixReassemblerDecoder implements NameDecoder {
     @Cacheable(cacheNames = CACHE_NAME)
     public String decode(String ciphertext) {
 
-        StringHalves stringHalves = StringHalves.splitIntoHalves(ciphertext);
-        String reassambled = stringHalves.getSecondHalf() + stringHalves.getFirstHalf();
+        StringHalves halves = StringHalves.splitIntoHalves(ciphertext);
+        String reassambled = halves.getSecondHalf() + halves.getFirstHalf();
 
         String result;
         if (reassambled.endsWith(EncoderUtils.PAD)) {
